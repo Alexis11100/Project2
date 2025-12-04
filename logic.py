@@ -42,3 +42,4 @@ class Logic(QMainWindow, Ui_MainWindow):
 
 
 
+
