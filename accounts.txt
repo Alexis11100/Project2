@@ -5,3 +5,4 @@ Sarah   Davis    120.00
 David   Wilson   450.25
 Alexis  Bentley  1000.00
 John    Wilson    0.00
+Jade    Adler    5000.00
