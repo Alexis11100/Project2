@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(400, 500)
+        MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.withdraw_btn = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -43,7 +43,7 @@ class Ui_MainWindow(object):
         self.label_4.setGeometry(QtCore.QRect(10, 200, 81, 20))
         self.label_4.setObjectName("label_4")
         self.acct_bal = QtWidgets.QLabel(parent=self.centralwidget)
-        self.acct_bal.setGeometry(QtCore.QRect(60, 320, 191, 20))
+        self.acct_bal.setGeometry(QtCore.QRect(60, 320, 191, 41))
         self.acct_bal.setObjectName("acct_bal")
         self.search_btn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.search_btn.setGeometry(QtCore.QRect(84, 160, 81, 21))

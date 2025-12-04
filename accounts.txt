@@ -4,3 +4,4 @@ Michael Brown    9876.55
 Sarah   Davis    120.00
 David   Wilson   450.25
 Alexis  Bentley  1000.00
+John    Wilson    0.00
