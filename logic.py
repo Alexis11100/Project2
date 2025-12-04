@@ -9,6 +9,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.search_btn.clicked.connect(lambda: self.search())
         self.deposit_btn.clicked.connect(lambda: self.deposit())
+        self.withdraw_btn.clicked.connect(lambda: self.withdraw())
 
     def search(self):
         """This function searches for the first name and last name in the text file and if the first and last
@@ -47,6 +48,26 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.acct_bal.setStyleSheet("color: black;")
             self.acct_bal.setText(
                 f'You have deposited ${amount:.2f}\nYour new balance is ${self.balance:.2f}'
+            )
+        else:
+            self.acct_bal.setStyleSheet("color: red;")
+            self.acct_bal.setText("The amount entered is invalid. Please try again.")
+    def withdraw(self):
+        try:
+            amount = float(self.amount.text())
+        except ValueError:
+            self.acct_bal.setStyleSheet("color: red;")
+            self.acct_bal.setText("Invalid amount entered.")
+            return
+        if self.balance is None:
+            self.acct_bal.setStyleSheet("color: red;")
+            self.acct_bal.setText("No account selected. Please search first.")
+            return
+        if amount > 0:
+            self.balance -= amount
+            self.acct_bal.setStyleSheet("color: black;")
+            self.acct_bal.setText(
+                f'You have withdrawn ${amount:.2f}\nYour new balance is ${self.balance:.2f}'
             )
         else:
             self.acct_bal.setStyleSheet("color: red;")
