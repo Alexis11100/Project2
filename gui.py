@@ -43,7 +43,7 @@ class Ui_MainWindow(object):
         self.label_4.setGeometry(QtCore.QRect(10, 200, 81, 20))
         self.label_4.setObjectName("label_4")
         self.acct_bal = QtWidgets.QLabel(parent=self.centralwidget)
-        self.acct_bal.setGeometry(QtCore.QRect(60, 320, 191, 41))
+        self.acct_bal.setGeometry(QtCore.QRect(60, 320, 231, 41))
         self.acct_bal.setObjectName("acct_bal")
         self.search_btn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.search_btn.setGeometry(QtCore.QRect(84, 160, 81, 21))
