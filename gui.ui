@@ -63,7 +63,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Enter Username</string>
+     <string>First Name</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -76,7 +76,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Enter Password</string>
+     <string>Last Name</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -122,6 +122,19 @@
      <string>Enter Amount</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>290</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#fa0000;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -129,7 +142,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>33</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
