@@ -26,6 +26,11 @@ class Logic(QMainWindow, Ui_MainWindow):
                         self.acct_bal.setStyleSheet("color: red;")
                         self.acct_bal.setText("Account not found.")
     def deposit(self):
+        amount = float(self.amount.text())
+        current_bal = float(self.acct_bal.text().split('$')[1])
+        if amount > 0:
+            new_bal = current_bal + amount
+            self.acct_bal.setText(f'You have deposited ${amount:.2f} \n Your new balance is ${new_bal:.2f}')
 
 
 
