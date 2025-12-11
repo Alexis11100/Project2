@@ -3,7 +3,7 @@ from gui import *
 
 class Logic(QMainWindow, Ui_MainWindow):
     """This class initializes the buttons and sets the balance up for later"""
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.balance = None
         self.setupUi(self)
@@ -11,7 +11,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.deposit_btn.clicked.connect(lambda: self.deposit())
         self.withdraw_btn.clicked.connect(lambda: self.withdraw())
 
-    def search(self):
+    def search(self) -> None:
         """This function searches for the first name and last name in the text file and if the first and last
         name is not in the text file it gives the option to create a new account otherwise it displays an error message"""
         with open("accounts.txt", "r") as file:
@@ -30,7 +30,8 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.acct_bal.setText("Account not found.")
         self.acct_bal.setStyleSheet("color: red;")
 
-    def deposit(self):
+    def deposit(self) -> None:
+        """validates for blanks not entered and includes the logic for the deposit button"""
         try:
             amount = float(self.amount.text())
         except ValueError:
@@ -52,7 +53,8 @@ class Logic(QMainWindow, Ui_MainWindow):
         else:
             self.acct_bal.setStyleSheet("color: red;")
             self.acct_bal.setText("The amount entered is invalid. Please try again.")
-    def withdraw(self):
+    def withdraw(self) -> None:
+        """includes validation and includes the logic for the withdraw button """
         try:
             amount = float(self.amount.text())
         except ValueError:
