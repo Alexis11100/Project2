@@ -31,7 +31,6 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.acct_bal.setStyleSheet("color: red;")
 
     def deposit(self) -> None:
-        """validates for blanks not entered and includes the logic for the deposit button"""
         try:
             amount = float(self.amount.text())
         except ValueError:
@@ -41,10 +40,10 @@ class Logic(QMainWindow, Ui_MainWindow):
 
         if self.balance is None:
             self.acct_bal.setStyleSheet("color: red;")
-            self.acct_bal.setText("No account selected. Please search first.")
+            self.acct_bal.setText("No account selected.\nPlease search first.")
             return
 
-        if amount >= 0:
+        if amount > 0:
             self.balance += amount
             self.acct_bal.setStyleSheet("color: black;")
             self.acct_bal.setText(
@@ -52,39 +51,36 @@ class Logic(QMainWindow, Ui_MainWindow):
             )
         else:
             self.acct_bal.setStyleSheet("color: red;")
-            self.acct_bal.setText("The amount entered is invalid. Please try again.")
+            self.acct_bal.setText("Deposit amount must be greater than zero.")
+
     def withdraw(self) -> None:
-        """includes validation and includes the logic for the withdraw button """
         try:
             amount = float(self.amount.text())
         except ValueError:
             self.acct_bal.setStyleSheet("color: red;")
-            self.acct_bal.setText("Invalid amount entered.")
+            self.acct_bal.setText("Invalid amount entered.\n Please enter a number.")
             return
+
         if self.balance is None:
             self.acct_bal.setStyleSheet("color: red;")
-            self.acct_bal.setText("No account selected. Please search first.")
+            self.acct_bal.setText("No account selected.\n Please search first.")
             return
-        if amount > 0:
-            self.balance -= amount
-            self.acct_bal.setStyleSheet("color: black;")
-            self.acct_bal.setText(
-                f'You have withdrawn ${amount:.2f}\nYour new balance is ${self.balance:.2f}'
-            )
-        else:
+
+        if amount <= 0:
             self.acct_bal.setStyleSheet("color: red;")
-            self.acct_bal.setText("The amount entered is invalid. Please try again.")
+            self.acct_bal.setText("Withdrawal amount must be greater than zero.")
+            return
 
+        if amount > self.balance:
+            self.acct_bal.setStyleSheet("color: red;")
+            self.acct_bal.setText("Insufficient funds.")
+            return
 
-
-
-
-
-
-
-
-
-
+        self.balance -= amount
+        self.acct_bal.setStyleSheet("color: black;")
+        self.acct_bal.setText(
+            f'You have withdrawn ${amount:.2f}\nYour new balance is ${self.balance:.2f}'
+        )
 
 
 
